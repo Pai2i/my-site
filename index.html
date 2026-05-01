@@ -1,138 +1,100 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ভিডিও প্লেয়ার - ইউটিউব স্টাইল</title>
+    <title>Video Player</title>
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Hind+Siliguri:wght@400;600&display=swap');
-
-        body {
-            font-family: 'Roboto', 'Hind Siliguri', sans-serif;
-            background-color: #0f0f0f; /* ইউটিউব ডার্ক মোড কালার */
-            color: white;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            padding-top: 40px;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        .video-container {
-            width: 90%;
-            max-width: 1000px;
+        body{
+            background:#0d0d0d;
+            font-family:Arial, sans-serif;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            overflow:hidden;
         }
 
-        /* ভিডিও প্লেয়ার বক্স */
-        .player-box {
-            background-color: #000;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
+        .container{
+            width:420px;
+            max-width:95%;
         }
 
-        .player-box iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
+        .card{
+            background:#161616;
+            border-radius:24px;
+            overflow:hidden;
+            box-shadow:0 0 40px rgba(0,0,0,0.6);
         }
 
-        /* ভিডিওর নিচের তথ্য */
-        .video-info {
-            margin-top: 15px;
-            padding: 0 5px;
+        .topbar{
+            padding:14px;
+            color:white;
+            text-align:center;
+            font-size:18px;
+            background:#1f1f1f;
+            letter-spacing:1px;
         }
 
-        .video-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #f1f1f1;
+        .video-box{
+            position:relative;
+            width:100%;
+            height:720px;
         }
 
-        .channel-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 15px;
+        iframe{
+            width:100%;
+            height:100%;
+            border:none;
         }
 
-        .channel-left {
-            display: flex;
-            align-items: center;
+        .footer{
+            color:#888;
+            text-align:center;
+            padding:10px;
+            font-size:13px;
+            background:#111;
         }
 
-        .avatar {
-            width: 40px;
-            height: 40px;
-            background-color: #ff0000;
-            border-radius: 50%;
-            margin-right: 12px;
-        }
-
-        .channel-name {
-            font-weight: 600;
-            font-size: 16px;
-        }
-
-        .subscribe-btn {
-            background-color: #f1f1f1;
-            color: #0f0f0f;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .subscribe-btn:hover {
-            background-color: #d9d9d9;
-        }
-
-        .description-box {
-            background-color: #272727;
-            padding: 12px;
-            border-radius: 12px;
-            margin-top: 15px;
-            font-size: 14px;
-            line-height: 1.5;
+        @media(max-width:500px){
+            .video-box{
+                height:85vh;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <div class="video-container">
-        <div class="player-box">
-            <iframe 
-                src="https://xhamster.com/embed/xhgPoRf" 
-                allowfullscreen 
-                sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation">
-            </iframe>
-        </div>
+    <div class="container">
 
-        <div class="video-info">
-            <div class="video-title">আপনার ভিডিওর শিরোনাম এখানে হবে</div>
-            
-            <div class="channel-section">
-                <div class="channel-left">
-                    <div class="avatar"></div>
-                    <div class="channel-name">ক্রিয়েটর নাম</div>
-                </div>
-                <a href="#" class="subscribe-btn">সাবস্ক্রাইব</a>
+        <div class="card">
+
+            <div class="topbar">
+                Featured Video
             </div>
 
-            <div class="description-box">
-                <strong>১.২ লাখ ভিউস • ২ দিন আগে</strong><br>
-                এখানে ভিডিওর বিস্তারিত বর্ণনা থাকবে। ইউটিউবের মতো সুন্দর ডিজাইনে আপনার কন্টেন্ট সাজানো হয়েছে।
+            <div class="video-box">
+                <iframe 
+                    src="https://xhamster.com/embed/xhgPoRf"
+                    allowfullscreen>
+                </iframe>
             </div>
+
+            <div class="footer">
+                Embedded Video Player
+            </div>
+
         </div>
+
     </div>
 
 </body>
-    </html>
+</html>
