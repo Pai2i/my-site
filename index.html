@@ -1,76 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Video Showcase</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ভিডিও প্ল্যাটফর্ম</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap');
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #1a1a1a; /* ডার্ক ব্যাকগ্রাউন্ড */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
 
-body{
-    background:#0f0f0f;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-family:Arial,sans-serif;
-}
+        /* মূল বক্স বা কন্টেইনার */
+        .main-container {
+            background-color: #fff;
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+        }
 
-.container{
-    width:420px;
-    max-width:95%;
-}
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
 
-.card{
-    background:#181818;
-    border-radius:25px;
-    padding:15px;
-    box-shadow:0 0 40px rgba(0,0,0,0.6);
-}
+        /* ভিডিওর জন্য রেসপনসিভ বক্স */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 রেশিও */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+        }
 
-.title{
-    color:white;
-    font-size:20px;
-    margin-bottom:12px;
-    text-align:center;
-}
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
-.video-wrapper{
-    overflow:hidden;
-    border-radius:18px;
-}
-
-iframe{
-    width:100%;
-    height:720px;
-    border:none;
-}
-</style>
+        .footer-text {
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="container">
-    <div class="card">
-
-        <div class="title">
-            Featured Reel
-        </div>
-
+    <div class="main-container">
+        <h1>আমাদের ভিডিও গ্যালারি</h1>
+        
         <div class="video-wrapper">
-            <iframe
-                src="https://www.instagram.com/reel/DXyBqQ-BTPF/embed/"
+            <iframe 
+                src="https://xhamster.com/embed/xhgPoRf"
                 allowfullscreen>
             </iframe>
         </div>
 
+        <p class="footer-text">© ২০২৬ সর্বস্বত্ব সংরক্ষিত</p>
     </div>
-</div>
 
 </body>
 </html>
