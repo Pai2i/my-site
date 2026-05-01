@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hollywood Dragon</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+    background:
+    radial-gradient(circle at center,#16213e,#0f172a,#000000 90%);
+    perspective:1200px;
+    font-family:Arial;
+}
+
+/* Background fog */
+body::before{
+    content:'';
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:
+    radial-gradient(rgba(0,255,255,0.08),transparent 60%);
+    animation:fog 15s linear infinite;
+}
+
+/* Stars */
+body::after{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+    background-size:70px 70px;
+    opacity:0.3;
+}
+
+.dragon{
+    position:absolute;
+    width:320px;
+    height:180px;
+    transform-style:preserve-3d;
+    transform:translate(-50%,-50%) rotateY(0deg);
+    animation:hovering 4s ease-in-out infinite;
+    filter:drop-shadow(0 0 25px cyan);
+}
+
+.body{
+    position:absolute;
+    width:180px;
+    height:90px;
+    background:
+    linear-gradient(45deg,#0f0f0f,#2c2c2c,#101010);
+    border-radius:90px;
+    left:70px;
+    top:45px;
+    box-shadow:
+    inset 0 0 20px rgba(255,255,255,0.1),
+    0 0 30px rgba(0,255,255,0.4);
+}
+
+.neck{
+    position:absolute;
+    width:80px;
+    height:35px;
+    background:#1f1f1f;
+    border-radius:30px;
+    top:58px;
+    left:25px;
+    transform:rotate(-12deg);
+}
+
+.head{
+    position:absolute;
+    width:70px;
+    height:50px;
+    background:linear-gradient(45deg,#151515,#2d2d2d);
+    border-radius:30px;
+    top:48px;
+    left:0;
+    box-shadow:0 0 20px rgba(255,0,0,0.5);
+}
+
+.eye{
+    position:absolute;
+    width:12px;
+    height:12px;
+    background:red;
+    border-radius:50%;
+    top:16px;
+    left:15px;
+    box-shadow:0 0 20px red;
+}
+
+.fire{
+    position:absolute;
+    width:90px;
+    height:18px;
+    left:-80px;
+    top:65px;
+    border-radius:50px;
+    background:
+    linear-gradient(to right,
+    yellow,
+    orange,
+    red,
+    transparent);
+
+    filter:blur(4px);
+    animation:fire 0.15s infinite alternate;
+}
+
+.wing{
+    position:absolute;
+    width:140px;
+    height:140px;
+    background:
+    linear-gradient(45deg,
+    rgba(0,255,255,0.08),
+    rgba(255,255,255,0.02));
+
+    border:2px solid rgba(0,255,255,0.4);
+
+    clip-path:polygon(0 0,100% 50%,0 100%);
+
+    backdrop-filter:blur(4px);
+}
+
+.left-wing{
+    left:15px;
+    top:0;
+    transform-origin:right center;
+    animation:wingLeft 0.6s infinite alternate ease-in-out;
+}
+
+.right-wing{
+    right:10px;
+    top:0;
+    transform:scaleX(-1);
+    transform-origin:left center;
+    animation:wingRight 0.6s infinite alternate ease-in-out;
+}
+
+.tail{
+    position:absolute;
+    width:130px;
+    height:12px;
+    background:
+    linear-gradient(to right,#222,cyan);
+
+    border-radius:20px;
+    top:84px;
+    left:210px;
+    animation:tail 1s infinite alternate;
+}
+
+.tail::after{
+    content:'';
+    position:absolute;
+    width:22px;
+    height:22px;
+    background:cyan;
+    right:-8px;
+    top:-5px;
+    transform:rotate(45deg);
+    filter:blur(1px);
+}
+
+.glow{
+    position:absolute;
+    width:400px;
+    height:400px;
+    border-radius:50%;
+    background:radial-gradient(rgba(0,255,255,0.15),transparent 70%);
+    left:-40px;
+    top:-110px;
+    z-index:-1;
+    animation:pulse 2s infinite;
+}
+
+.text{
+    position:absolute;
+    top:25px;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size:28px;
+    letter-spacing:3px;
+    text-shadow:
+    0 0 10px cyan,
+    0 0 20px cyan;
+}
+
+@keyframes wingLeft{
+    from{
+        transform:rotate(-18deg) rotateX(15deg);
+    }
+
+    to{
+        transform:rotate(18deg) rotateX(-10deg);
+    }
+}
+
+@keyframes wingRight{
+    from{
+        transform:scaleX(-1) rotate(-18deg) rotateX(15deg);
+    }
+
+    to{
+        transform:scaleX(-1) rotate(18deg) rotateX(-10deg);
+    }
+}
+
+@keyframes tail{
+    from{
+        transform:rotate(8deg);
+    }
+
+    to{
+        transform:rotate(24deg);
+    }
+}
+
+@keyframes fire{
+    from{
+        width:70px;
+        opacity:0.7;
+    }
+
+    to{
+        width:110px;
+        opacity:1;
+    }
+}
+
+@keyframes hovering{
+    0%{
+        transform:translate(-50%,-50%) translateY(0px);
+    }
+
+    50%{
+        transform:translate(-50%,-50%) translateY(-18px);
+    }
+
+    100%{
+        transform:translate(-50%,-50%) translateY(0px);
+    }
+}
+
+@keyframes fog{
+    from{
+        transform:translate(-10%,-10%) rotate(0deg);
+    }
+
+    to{
+        transform:translate(-15%,-15%) rotate(360deg);
+    }
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+        opacity:0.5;
+    }
+
+    50%{
+        transform:scale(1.08);
+        opacity:0.9;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:0.5;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div class="text">
+HOLLYWOOD DRAGON ENGINE
+</div>
+
+<div class="dragon" id="dragon">
+
+<div class="glow"></div>
+
+<div class="fire"></div>
+
+<div class="wing left-wing"></div>
+<div class="wing right-wing"></div>
+
+<div class="neck"></div>
+<div class="head">
+<div class="eye"></div>
+</div>
+
+<div class="body"></div>
+<div class="tail"></div>
+
+</div>
+
+<script>
+
+const dragon = document.getElementById('dragon');
+
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+
+let currentX = mouseX;
+let currentY = mouseY;
+
+window.addEventListener('mousemove',e=>{
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+window.addEventListener('touchmove',e=>{
+    mouseX = e.touches[0].clientX;
+    mouseY = e.touches[0].clientY;
+});
+
+function animate(){
+
+    currentX += (mouseX-currentX)*0.06;
+    currentY += (mouseY-currentY)*0.06;
+
+    dragon.style.left = currentX + 'px';
+    dragon.style.top = currentY + 'px';
+
+    const rotateY = (mouseX/window.innerWidth - 0.5)*40;
+
+    dragon.style.transform = `
+    translate(-50%,-50%)
+    rotateY(${rotateY}deg)
+    `;
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+</script>
+</body>
+</html>
