@@ -3,77 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ভিডিও প্ল্যাটফর্ম</title>
+    <title>ভিডিও প্লেয়ার - ইউটিউব স্টাইল</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Hind+Siliguri:wght@400;600&display=swap');
 
         body {
-            font-family: 'Hind Siliguri', sans-serif;
-            background-color: #1a1a1a; /* ডার্ক ব্যাকগ্রাউন্ড */
+            font-family: 'Roboto', 'Hind Siliguri', sans-serif;
+            background-color: #0f0f0f; /* ইউটিউব ডার্ক মোড কালার */
+            color: white;
+            margin: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
+            padding-top: 40px;
         }
 
-        /* মূল বক্স বা কন্টেইনার */
-        .main-container {
-            background-color: #fff;
-            width: 100%;
-            max-width: 900px;
-            padding: 20px;
+        .video-container {
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        /* ভিডিও প্লেয়ার বক্স */
+        .player-box {
+            background-color: #000;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            text-align: center;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        /* ভিডিওর জন্য রেসপনসিভ বক্স */
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 রেশিও */
-            height: 0;
             overflow: hidden;
-            border-radius: 8px;
-            background: #000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
         }
 
-        .video-wrapper iframe {
+        .player-box iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border: 0;
+            border: none;
         }
 
-        .footer-text {
-            margin-top: 20px;
-            color: #666;
+        /* ভিডিওর নিচের তথ্য */
+        .video-info {
+            margin-top: 15px;
+            padding: 0 5px;
+        }
+
+        .video-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #f1f1f1;
+        }
+
+        .channel-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .channel-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+
+        .channel-name {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .subscribe-btn {
+            background-color: #f1f1f1;
+            color: #0f0f0f;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
             font-size: 14px;
+        }
+
+        .subscribe-btn:hover {
+            background-color: #d9d9d9;
+        }
+
+        .description-box {
+            background-color: #272727;
+            padding: 12px;
+            border-radius: 12px;
+            margin-top: 15px;
+            font-size: 14px;
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <h1>আমাদের ভিডিও গ্যালারি</h1>
-        
-        <div class="video-wrapper">
+    <div class="video-container">
+        <div class="player-box">
             <iframe 
-                src="https://xhamster.com/embed/xhgPoRf"
-                allowfullscreen>
+                src="https://xhamster.com/embed/xhgPoRf" 
+                allowfullscreen 
+                sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation">
             </iframe>
         </div>
 
-        <p class="footer-text">© ২০২৬ সর্বস্বত্ব সংরক্ষিত</p>
+        <div class="video-info">
+            <div class="video-title">আপনার ভিডিওর শিরোনাম এখানে হবে</div>
+            
+            <div class="channel-section">
+                <div class="channel-left">
+                    <div class="avatar"></div>
+                    <div class="channel-name">ক্রিয়েটর নাম</div>
+                </div>
+                <a href="#" class="subscribe-btn">সাবস্ক্রাইব</a>
+            </div>
+
+            <div class="description-box">
+                <strong>১.২ লাখ ভিউস • ২ দিন আগে</strong><br>
+                এখানে ভিডিওর বিস্তারিত বর্ণনা থাকবে। ইউটিউবের মতো সুন্দর ডিজাইনে আপনার কন্টেন্ট সাজানো হয়েছে।
+            </div>
+        </div>
     </div>
 
 </body>
-</html>
+    </html>
