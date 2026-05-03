@@ -1,60 +1,63 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Background Video Site</title>
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background: url('https://i.postimg.cc/ydLCMRHx/086c93b0c60903ea52e46fc7172c7360.jpg') no-repeat center center/cover;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    .box {
-      padding: 25px 35px;
-      border-radius: 12px;
-      border: 2px solid white;
-      color: white;
-      text-align: center;
-      backdrop-filter: blur(5px); /* হালকা glass effect */
-    }
+body{
+    overflow:hidden;
+    height:100vh;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 40px;
-    }
+/* 🎥 Background Video */
+.bg-video{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
+}
 
-    p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-    button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-  </style>
+/* Content */
+.content{
+    position:relative;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:40px;
+    font-family:Arial;
+    text-shadow:0 0 10px black;
+}
+</style>
 
 </head>
 
 <body>
 
-  <div class="box">
-    <h1>Welcome</h1>
-    <p>এটা তোমার ওয়েবসাইট</p>
-    <button>Click Me</button>
-  </div>
+<!-- 🔥 BACKGROUND VIDEO -->
+<iframe
+class="bg-video"
+src="YOUR_EMBED_LINK_HERE?autoplay=1&mute=1&loop=1"
+frameborder="0"
+allow="autoplay"
+></iframe>
+
+<!-- Content -->
+<div class="content">
+    Welcome
+</div>
 
 </body>
 </html>
