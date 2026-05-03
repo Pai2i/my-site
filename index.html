@@ -1,100 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Player</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url('https://i.postimg.cc/ydLCMRHx/086c93b0c60903ea52e46fc7172c7360.jpg') no-repeat center center/cover;
+      font-family: Arial, sans-serif;
+    }
 
-        body{
-            background:#0d0d0d;
-            font-family:Arial, sans-serif;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-            overflow:hidden;
-        }
+    .overlay {
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5); /* dark overlay */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
 
-        .container{
-            width:420px;
-            max-width:95%;
-        }
+    h1 {
+      font-size: 40px;
+      margin: 0;
+    }
 
-        .card{
-            background:#161616;
-            border-radius:24px;
-            overflow:hidden;
-            box-shadow:0 0 40px rgba(0,0,0,0.6);
-        }
+    p {
+      font-size: 18px;
+    }
 
-        .topbar{
-            padding:14px;
-            color:white;
-            text-align:center;
-            font-size:18px;
-            background:#1f1f1f;
-            letter-spacing:1px;
-        }
+    .box {
+      padding: 20px;
+      border: 2px solid white;
+      border-radius: 10px;
+    }
+  </style>
 
-        .video-box{
-            position:relative;
-            width:100%;
-            height:720px;
-        }
-
-        iframe{
-            width:100%;
-            height:100%;
-            border:none;
-        }
-
-        .footer{
-            color:#888;
-            text-align:center;
-            padding:10px;
-            font-size:13px;
-            background:#111;
-        }
-
-        @media(max-width:500px){
-            .video-box{
-                height:85vh;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <div class="container">
-
-        <div class="card">
-
-            <div class="topbar">
-                Featured Video
-            </div>
-
-            <div class="video-box">
-                <iframe 
-                    src="https://xhamster.com/embed/xhgPoRf"
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <div class="footer">
-                Embedded Video Player
-            </div>
-
-        </div>
-
+  <div class="overlay">
+    <div class="box">
+      <h1>Welcome to My Website</h1>
+      <p>এটা একটা simple background website</p>
     </div>
+  </div>
 
 </body>
 </html>
