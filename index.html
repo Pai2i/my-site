@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BG Video</title>
+<title>Auto Background Video</title>
 
 <style>
 body{
@@ -11,37 +11,43 @@ body{
   overflow:hidden;
 }
 
-/* full screen iframe */
-iframe{
+/* 🎥 FULL SCREEN VIDEO */
+video{
   position:fixed;
   top:0;
   left:0;
   width:100%;
   height:100%;
-  border:none;
+  object-fit:cover;
   z-index:-1;
 }
 
-/* content */
-h1{
-  position:absolute;
+/* CONTENT */
+.content{
+  position:relative;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
   color:white;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
+  font-size:40px;
   font-family:Arial;
+  text-shadow:0 0 10px black;
 }
 </style>
+
 </head>
 
 <body>
 
-<iframe 
-src="https://jumpshare.com/embed/1r8ubFZpejXgjcbyeg7A"
-allow="autoplay">
-</iframe>
+<!-- 🔥 AUTO LOOP VIDEO -->
+<video autoplay muted loop playsinline>
+  <source src="video.mp4" type="video/mp4">
+</video>
 
-<h1>My Site</h1>
+<div class="content">
+  Welcome
+</div>
 
 </body>
 </html>
