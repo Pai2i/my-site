@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auto Background Video</title>
+<title>Fix BG Video</title>
 
 <style>
 body{
@@ -11,7 +11,7 @@ body{
   overflow:hidden;
 }
 
-/* 🎥 FULL SCREEN VIDEO */
+/* VIDEO BACKGROUND */
 video{
   position:fixed;
   top:0;
@@ -22,32 +22,26 @@ video{
   z-index:-1;
 }
 
-/* CONTENT */
-.content{
-  position:relative;
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+/* TEXT */
+h1{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
   color:white;
-  font-size:40px;
   font-family:Arial;
   text-shadow:0 0 10px black;
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- 🔥 AUTO LOOP VIDEO -->
 <video autoplay muted loop playsinline>
-  <source src="video.mp4" type="video/mp4">
+  <source src="./video.mp4" type="video/mp4">
 </video>
 
-<div class="content">
-  Welcome
-</div>
+<h1>Welcome</h1>
 
 </body>
 </html>
